@@ -2,6 +2,7 @@
 .DS_Store
 
 #laravel
+approot/.env
 approot/node_modules
 approot/public/storage
 approot/public/hot
@@ -10,12 +11,16 @@ approot/storage/*.key
 approot/.idea
 approot/Homestead.json
 approot/Homestead.yaml
-approot/.env
+
 approot/storage/framework/views/*
 approot/storage/debugbar/*
 
+#wordpress
+approot/public/note/wp-config.php
+
 #me
 .para/*
+.doc/*
 
 #sass
 prepros-6.config
