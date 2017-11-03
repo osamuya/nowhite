@@ -1,4 +1,3 @@
-
 <!doctype html>
 <!--[if IE 6]> <html class="ie6"> <![endif]-->
 <!--[if IE 7]> <html class="ie7"> <![endif]-->
@@ -127,6 +126,38 @@
 		
 		<div class="row">
 			<div class="col-md-8">
+
+		<div class="top-blog-index">
+			<div class="media boardline" id="boradfree-3">
+				<!--Thumbnail-->
+				<span class="media-left float-right">
+					<img src="https://placehold.jp/320x320.png" class="img-rounded" width="40" height="40">
+				</span>
+				<div class="media-body">
+					<h4 class="media-heading">
+						<a href="/board_free/page/3">完全に知能が低い人々との関わり方</a>...
+					</h4>
+					2017.10.22
+					<span class="item-category borad-float">全般</span>
+				</div>
+			</div>
+			<div class="media boardline" id="boradfree-3">
+				<!--Thumbnail-->
+				<span class="media-left float-right">
+					<img src="https://placehold.jp/320x320.png" class="img-rounded" width="40" height="40">
+				</span>
+				<div class="media-body">
+					<h4 class="media-heading">
+						<a href="/board_free/page/3">完全に知能が低い人々との関わり方</a>...
+					</h4>
+					2017.10.22
+					<span class="item-category borad-float">全般</span>
+				</div>
+			</div>
+		</div>
+		
+		
+		
 			
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<h2 class="h2"><?php the_title(); ?></h2>
