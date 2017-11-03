@@ -171,37 +171,31 @@
 			
 			<div class="col-md-4">
 			
-				<div class="form">
-					<form method="post" action="http://peep.local/signup_procedure" autocomplete="off" novalidate="">
-						<input type="hidden" name="_token" value="39ZIcnSazxRyd9UtbKzUFzIOS0fd51tGV0JpwUnp">
-						<div class="form-group">
-							<label for="Email">Email</label>
-							<input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="user@example.com" autocomplete="off" name="Email" value="">
-							<small id="emailHelp" class="form-text text-muted">
-								
-							</small>
-						</div>
-						<div class="form-group">
-							<label for="Password">Password</label>
-							<input type="password" class="form-control" id="Password" placeholder="Password" autocomplete="off" name="Password" value="">
-							<small id="emailHelp" class="form-text text-muted" autocomplete="off">
-								
-							</small>
-						</div>
-						<div class="form-check">
-							<label class="form-check-label">
-							<input type="checkbox" class="form-check-input" autocomplete="off"><span class="checkbox-text" autocomplete="off">次回から自動的にログインする</span>
-							</label>
-						</div>
-						<div class="form-botton mt10">
-							<button type="submit" class="btn btn-primary">会員登録</button>
-						</div>
-					</form>
-				</div>
+				<div class="sidebar">
 				
-				<ul>
-					<li><a href="/">home</a></li>
-				</ul>
+					<div class="mphoto">
+						<a href="#"><p><img src="https://placehold.jp/320x320.png"></p></a>
+						<a href="#"><p><img src="https://placehold.jp/320x320.png"></p></a>
+						<a href="#"><p><img src="https://placehold.jp/100x150.png"></p></a>
+						<a href="#"><p><img src="https://placehold.jp/320x320.png"></p></a>
+						<a href="#"><p><img src="https://placehold.jp/320x320.png"></p></a>
+						<a href="#"><p><img src="https://placehold.jp/320x320.png"></p></a>
+						<a href="#"><p><img src="https://placehold.jp/320x320.png"></p></a>
+						<a href="#"><p><img src="https://placehold.jp/100x150.png"></p></a>
+						<a href="#"><p><img src="https://placehold.jp/100x150.png"></p></a>
+						<a href="#"><p><img src="https://placehold.jp/150x150.png"></p></a>
+					</div>
+				
+					<ul>
+					<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
+					//ダイナミックサイドバーなかった時の処理
+					<?php endif; ?>
+					</ul>
+
+					<ul>
+						<li><a href="/">home</a></li>
+					</ul>
+				</div>
 				
 			</div><!--.col-md-4-->
 		</div>
