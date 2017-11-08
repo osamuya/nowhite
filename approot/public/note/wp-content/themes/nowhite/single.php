@@ -9,9 +9,11 @@
 			
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 				<h2 class="h2"><?php the_title(); ?></h2>
+				<div class="tpoic-tags">
+					<span class="blog-tags"><?php the_tags("","<span>","</span>"); ?></span>
+				</div>
 				<div class="tpoic-meta mb40">
 					<span class="blog-category"><?php the_category(', '); ?></span>
-					<span class="blog-tags"><a href="">tag</a></span>
 					<span class="blog-date"><?php the_time('Y年n月j日'); ?></span>
 				</div>
 				<div class="blog-text">

@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::match(['get', 'post'], '/', 'TopController@index');
 
 // local only for testing or view
 if (env("APP_ENV")=="local") {
@@ -23,6 +21,9 @@ if (env("APP_ENV")=="local") {
 	Route::get('/mock/mixed_blood', function () { return view('mock/mixed_blood'); });
 	Route::get('/mock/blog_top', function () { return view('mock/blog_top'); });
 	Route::get('/mock/blog_single', function () { return view('mock/blog_single'); });
-	
-
 }
+
+/*
+Route::get('/', function () { return view('welcome'); });
+
+*/
