@@ -1,0 +1,28 @@
+@charset "utf-8";
+.navbar-mc200 {
+	background: #fff;
+	a:link, a:visited {
+		border: none;
+	}
+	
+	.navbar-mc200-logo {
+		margin-top:-5px;
+		border: none;
+	}
+	.navbar-mc200-list {
+		line-height: 20px;
+		a:link, a:visited {
+			color: #000;
+			text-decoration: none;
+			line-height: 14px;
+			border: none;
+		}
+		a:active, a:hover {
+			color: #666;
+			border: none;
+		}
+		img.navbar-mc200-icon {
+			width: 16px;
+		}
+	}
+}
