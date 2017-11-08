@@ -38,7 +38,7 @@
 							}
 						?>
 							<span class="media-left float-right">
-						<img src="<?php echo $imageSrc; ?>" class="img-rounded" width="40" height="40">
+						<img src="<?php echo $imageSrc; ?>" class="img-rounded">
 						</span>
 							<div class="media-body">
 								<h4 class="media-heading">

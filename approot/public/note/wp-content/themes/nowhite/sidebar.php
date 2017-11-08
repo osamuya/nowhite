@@ -10,7 +10,6 @@
 			function attachment_ancherlinks($my_id=0, $num){
 				$args = "category=".$my_id."&numberposts=".$num;
 				$posts = get_posts($args);
-
 				for($i=0; $i <$num ;$i++){
 					if($i>= count($posts) ) return;
 						$attachments = get_children(array('post_parent' => $posts[$i]->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order'));

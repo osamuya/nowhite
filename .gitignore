@@ -5,7 +5,6 @@
 approot/.env
 approot/node_modules
 approot/public/storage
-approot/public/hot
 approot/storage/*.key
 #approot/vendor
 approot/.idea
