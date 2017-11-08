@@ -513,7 +513,8 @@ body {
   body .blog-text p {
     margin-bottom: 15px; }
     body .blog-text p img {
-      margin: 5px; }
+      margin: 5px;
+      float: right; }
     body .blog-text p img.alignleft {
       float: right; }
     body .blog-text p img.alignright {
