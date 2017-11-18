@@ -14,7 +14,7 @@
 Route::match(['get', 'post'], '/', 'TopController@index');
 
 // local only for testing or view
-if (env("APP_ENV")=="local") {
+if (env("APP_ENV")=="local" || env("APP_ENV")=="develop") {
 	Route::get('/list', function () { return view('mock/list'); });
 	Route::get('/mock', function () { return view('mock/index'); });
 	Route::get('/mock/blog_archives', function () { return view('mock/blog_archives'); });

@@ -16,6 +16,7 @@ approot/storage/debugbar/*
 
 #wordpress
 approot/public/note/wp-config.php
+approot/public/note/wp-content/uploads/*
 
 #me
 .para/*
