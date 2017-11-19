@@ -8,23 +8,24 @@
 }
 
 
-/**
- * mixins
- * ブロックを返す
- */
-
-/*
-デバイス定義
- */
-// $sp: "only screen and (max-width:" + $breakPoint + ")"; // @media #{$sp} {}
-
-@mixin sp {
-    @media print, screen and (max-width: $breakPoint) {
+/* breakPoint for Bootstrap*/
+@mixin xs {
+    @media print, screen and (max-width: 767px) {
         @content;
     }
 }
-@mixin pc {
-    @media print, screen and (min-width: $breakPoint+1) {
+@mixin sm {
+    @media print, screen and (min-width: 768px) and (max-width: 991px) {
+        @content;
+    }
+}
+@mixin md {
+    @media print, screen and (min-width: 992px) and (max-width: 1119px) {
+        @content;
+    }
+}
+@mixin px {
+    @media print, screen and (min-width: 1200px) {
         @content;
     }
 }

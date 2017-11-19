@@ -99,13 +99,7 @@ input, select {
  * function
  * 値を返す
  */
-/**
- * mixins
- * ブロックを返す
- */
-/*
-デバイス定義
- */
+/* breakPoint for Bootstrap*/
 /*
 スマホの文字指定専用（横幅640px想定）
 font-sizeにvwを設定
@@ -293,25 +287,25 @@ blockquote:before {
 
 .pci {
   display: inline; }
-  @media print, screen and (max-width: 640px) {
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
     .pci {
       display: none; } }
 
 .spi {
   display: none; }
-  @media print, screen and (max-width: 640px) {
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
     .spi {
       display: inline; } }
 
 .pc {
   display: block; }
-  @media print, screen and (max-width: 640px) {
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
     .pc {
       display: none; } }
 
 .sp {
   display: none; }
-  @media print, screen and (max-width: 640px) {
+  @media print, screen and (min-width: 768px) and (max-width: 991px) {
     .sp {
       display: block; } }
 
@@ -379,6 +373,60 @@ footer {
       border: none; }
     .navbar-mc200 .navbar-mc200-list img.navbar-mc200-icon {
       width: 16px; }
+
+html {
+  /* initialized */
+  font-family: Helvetica, Arial, 'Noto Sans Japanese','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, 'メイリオ', sans-serif;
+  letter-spacing: 1px;
+  color: #454; }
+
+body .mjumbotron {
+  margin-top: -20px;
+  height: auto;
+  overflow: hidden; }
+  body .mjumbotron .carousel {
+    margin-top: -48px;
+    margin-bottom: -48px; }
+    body .mjumbotron .carousel .carousel-indicators {
+      position: absolute;
+      top: 10%; }
+      @media print, screen and (max-width: 767px) {
+        body .mjumbotron .carousel .carousel-indicators {
+          top: 15%; } }
+      @media print, screen and (min-width: 768px) and (max-width: 991px) {
+        body .mjumbotron .carousel .carousel-indicators {
+          top: 15%; } }
+    body .mjumbotron .carousel .carousel-inner .item img {
+      width: 100%; }
+    body .mjumbotron .carousel .carousel-inner .item .carousel-text {
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 10%; }
+      body .mjumbotron .carousel .carousel-inner .item .carousel-text h3 {
+        font-size: 27px;
+        font-weight: normal;
+        margin-bottom: 14px;
+        letter-spacing: 2px; }
+        @media print, screen and (max-width: 767px) {
+          body .mjumbotron .carousel .carousel-inner .item .carousel-text h3 {
+            font-size: 4vw;
+            margin-bottom: 2%; } }
+      body .mjumbotron .carousel .carousel-inner .item .carousel-text p {
+        font-size: 16px;
+        font-weight: normal;
+        letter-spacing: 3px; }
+        @media print, screen and (max-width: 767px) {
+          body .mjumbotron .carousel .carousel-inner .item .carousel-text p {
+            display: none; } }
+      @media print, screen and (max-width: 767px) {
+        body .mjumbotron .carousel .carousel-inner .item .carousel-text button {
+          letter-spacing: 1px;
+          height: 23px;
+          padding: 0 10px; } }
+  body .mjumbotron .slider li img {
+    width: 100%;
+    margin-top: -48px; }
 
 body {
   letter-spacing: 2px;
