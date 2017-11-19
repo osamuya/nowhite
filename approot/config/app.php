@@ -225,6 +225,9 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        // 2017-11-19
+        'BaseClass' => 'app\Library\BaseClass',
+        'ContentsParameter' => app\Library\ContentsParameter::class,
 
     ],
 

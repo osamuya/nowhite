@@ -1,4 +1,5 @@
-@extends('layouts.applayout') @section('title', 'nowhite top') @section('content')
+@extends('layouts.applayout')
+@section('title', 'nowhite top') @section('content')
 
 <div class="jumbotron mjumbotron">
 
