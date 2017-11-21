@@ -9,75 +9,92 @@ html {
 }
 
 body {
-        .mjumbotron {
-            margin-top: -20px;
-            height: auto;
-            overflow: hidden;
-            .carousel {
-                margin-top: -48px;
-                margin-bottom: -48px;
-
-                .carousel-indicators {
-                    position: absolute;
-                    top: 10%;
-                    @include xs {
-                        top: 15%;
-                    }
-                    @include sm {
-                        top: 15%;
-                    }
-                }
-
-                .carousel-inner {
-                    .item {
+    .container {
+        .row {
+            .blog-text {
+                p {
+                    a:link, a:visited {
                         img {
-                            width: 100%;
+                            filter: sepia(50%);
+                            opacity: 0.8;
                         }
-                        .carousel-text {
-                            color: #fff;
-                            position: absolute;
-                            top: 50%;
-                            left: 10%;
-                            h3 {
-                                font-size: 27px;
-                                font-weight: normal;
-                                margin-bottom: 14px;
-                                letter-spacing: 2px;
-                                @include xs {
-                                    font-size: 4vw;
-                                    margin-bottom: 2%;
-                                }
-                            }
-                            p {
-                                font-size: 16px;
-                                font-weight: normal;
-                                letter-spacing: 3px;
-                                @include xs {
-                                    display: none;
-                                }
-                            }
-
-                            button {
-                                @include xs {
-                                    letter-spacing: 1px;
-                                    height: 23px;
-                                    padding: 0 10px;
-                                }
-                            }
-                        }
-                    }
-
-                }
-            }
-            .slider {
-                li {
-                    img {
-                        width: 100%;
-                        margin-top: -48px;
                     }
                 }
             }
         }
+    }
+
+    /* Top Slide show */
+    .mjumbotron {
+        margin-top: -20px;
+        height: auto;
+        overflow: hidden;
+        margin-bottom: 0px;
+        .carousel {
+            margin-top: -48px;
+            margin-bottom: -48px;
+
+            .carousel-indicators {
+                position: absolute;
+                top: 10%;
+                @include xs {
+                    top: 15%;
+                }
+                @include sm {
+                    top: 15%;
+                }
+            }
+
+            .carousel-inner {
+                .item {
+                    img {
+                        width: 100%;
+                    }
+                    .carousel-text {
+                        color: #fff;
+                        position: absolute;
+                        top: 50%;
+                        left: 10%;
+                        h3 {
+                            font-size: 27px;
+                            font-weight: normal;
+                            margin-bottom: 14px;
+                            letter-spacing: 2px;
+                            @include xs {
+                                font-size: 4vw;
+                                margin-bottom: 2%;
+                            }
+                        }
+                        p {
+                            font-size: 16px;
+                            font-weight: normal;
+                            letter-spacing: 3px;
+                            @include xs {
+                                display: none;
+                            }
+                        }
+
+                        button {
+                            @include xs {
+                                letter-spacing: 1px;
+                                height: 23px;
+                                padding: 0 10px;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+        .slider {
+            li {
+                img {
+                    width: 100%;
+                    margin-top: -48px;
+                }
+            }
+        }
+    }/*.mjumbotron*/
 
 }
 
@@ -89,13 +106,14 @@ body {
     a:visited {
         //        color: #000;
         //        text-decoration: underline;
-        color: #555;
+        color: #000;
         border-bottom: 1px solid #c1c1c1;
     }
     a:active,
     a:hover {
         color: #1DA1F2;
-        border-bottom: 1px solid #1DA1F2;
+//        border-bottom: 1px solid #1DA1F2;
+        border: none;
     } // form input
     input:-webkit-autofill {
         -webkit-box-shadow: 0 0 0px 1000px #fff inset;
@@ -283,6 +301,9 @@ body {
             img {
                 margin: 5px;
                 float: right;
+                opacity: 0.8;
+                -webkit-filter: sepia(80%);
+                filter: sepia(80%);
             }
             img.alignleft {
                 float: right;
@@ -456,4 +477,12 @@ body {
             display: inline;
         }
     }
+
+
+       .dw {
+        .dw-panel {
+            border: 1px #000 solid;
+        }
+    }
+
 }

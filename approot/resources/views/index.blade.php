@@ -62,4 +62,28 @@
         </div><!--.carousel-inner-->
     </div><!--.slide-->
 </div><!--.jumbotron-->
+
+
+
+<div class="dw">
+<?php
+    for($i=0;$i<100;$i++){
+$h = mt_rand(100,300);
+$heredocs = <<< EOM
+    <div class="dw-panel" style="height:{$h}px">
+        <div class="dw-panel__content">
+            <p>Some content.</p>
+        </div>
+    </div>
+EOM;
+echo $heredocs;
+    }
+
+?>
+</div>
+
+
+
+
+
 @endsection
