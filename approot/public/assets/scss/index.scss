@@ -15,8 +15,8 @@ body {
                 p {
                     a:link, a:visited {
                         img {
-                            filter: sepia(50%);
-                            opacity: 0.8;
+//                            filter: sepia(50%);
+//                            opacity: 0.8;
                         }
                     }
                 }
@@ -300,11 +300,27 @@ body {
             margin-bottom: 15px;
             img {
                 margin: 5px;
-                float: right;
-                opacity: 0.8;
-                -webkit-filter: sepia(80%);
-                filter: sepia(80%);
+//                float: right;
+//                opacity: 0.8;
+//                -webkit-filter: sepia(80%);
+//                filter: sepia(80%);
+//                -webkit-filter: saturate(0%);
+
             }
+            a:link, a:visited {
+                img {
+                    -webkit-filter: saturate(0%);
+                    filter: saturate(0%);
+                }
+            }
+            a:hover, a:active {
+                img {
+                    -webkit-filter: saturate(100%);
+                    filter: saturate(100%);
+                }
+            }
+
+
             img.alignleft {
                 float: right;
             }

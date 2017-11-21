@@ -383,10 +383,6 @@ html {
 body {
   /* Top Slide show */
   /*.mjumbotron*/ }
-  body .container .row .blog-text p a:link img, body .container .row .blog-text p a:visited img {
-    -webkit-filter: sepia(50%);
-    filter: sepia(50%);
-    opacity: 0.8; }
   body .mjumbotron {
     margin-top: -20px;
     height: auto;
@@ -569,11 +565,13 @@ body {
   body .blog-text p {
     margin-bottom: 15px; }
     body .blog-text p img {
-      margin: 5px;
-      float: right;
-      opacity: 0.8;
-      -webkit-filter: sepia(80%);
-      filter: sepia(80%); }
+      margin: 5px; }
+    body .blog-text p a:link img, body .blog-text p a:visited img {
+      -webkit-filter: saturate(0%);
+      filter: saturate(0%); }
+    body .blog-text p a:hover img, body .blog-text p a:active img {
+      -webkit-filter: saturate(100%);
+      filter: saturate(100%); }
     body .blog-text p img.alignleft {
       float: right; }
     body .blog-text p img.alignright {
