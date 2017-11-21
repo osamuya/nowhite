@@ -27,3 +27,7 @@ if (env("APP_ENV")=="local" || env("APP_ENV")=="develop") {
 Route::get('/', function () { return view('welcome'); });
 
 */
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
