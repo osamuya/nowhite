@@ -1,24 +1,25 @@
 #mac
 .DS_Store
 
-#laravel
+# laravel
 approot/.env
 approot/node_modules
 approot/public/storage
 approot/storage/*.key
-#approot/vendor
+# approot/vendor
 approot/.idea
 approot/Homestead.json
 approot/Homestead.yaml
 
 approot/storage/framework/views/*
 approot/storage/debugbar/*
+approot/public/.htaccess
 
-#wordpress
+# wordpress
 approot/public/note/wp-config.php
 approot/public/note/wp-content/uploads/*
 
-#me
+# me
 .para/*
 .doc/*
 
