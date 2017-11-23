@@ -290,7 +290,6 @@ body {
                 color: #000;
                 border: none;
             }
-
         }
     }
 
@@ -309,8 +308,8 @@ body {
             }
             a:link, a:visited {
                 img {
-                    -webkit-filter: saturate(0%);
-                    filter: saturate(0%);
+                    -webkit-filter: saturate(10%);
+                    filter: saturate(10%);
                 }
             }
             a:hover, a:active {
@@ -396,6 +395,19 @@ body {
     /* sidebar */
     /*=========*/
     .sidebar {
+        a:link, a:visited {
+            img {
+                -webkit-filter: saturate(10%);
+                filter: saturate(10%);
+            }
+        }
+        a:hover, a:active {
+            img {
+                -webkit-filter: saturate(100%);
+                filter: saturate(100%);
+            }
+        }
+
         .widgettitle {
 //            font-size: 18px;
 //            margin-bottom: 10px;

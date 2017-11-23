@@ -18,6 +18,7 @@ approot/public/.htaccess
 # wordpress
 approot/public/note/wp-config.php
 approot/public/note/wp-content/uploads/*
+approot/public/note/.htaccess
 
 # me
 .para/*

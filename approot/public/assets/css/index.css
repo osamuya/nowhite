@@ -567,8 +567,8 @@ body {
     body .blog-text p img {
       margin: 5px; }
     body .blog-text p a:link img, body .blog-text p a:visited img {
-      -webkit-filter: saturate(0%);
-      filter: saturate(0%); }
+      -webkit-filter: saturate(10%);
+      filter: saturate(10%); }
     body .blog-text p a:hover img, body .blog-text p a:active img {
       -webkit-filter: saturate(100%);
       filter: saturate(100%); }
@@ -624,6 +624,12 @@ body {
     border-radius: 4px;
     margin-bottom: 10px;
     background: #f5f5f5; }
+  body .sidebar a:link img, body .sidebar a:visited img {
+    -webkit-filter: saturate(10%);
+    filter: saturate(10%); }
+  body .sidebar a:hover img, body .sidebar a:active img {
+    -webkit-filter: saturate(100%);
+    filter: saturate(100%); }
   body .sidebar .widgettitle {
     font-size: 16px;
     border-bottom: 1px solid #c1c1c1;
