@@ -3,7 +3,7 @@
 
 html {
     /* initialized */
-    font-family: Helvetica, Arial, 'Noto Sans Japanese','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, 'メイリオ', sans-serif;
+    font-family: Helvetica, Arial, 'Noto Sans Japanese','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W5', Meiryo, 'メイリオ', sans-serif !important;
     letter-spacing: 1px;
     color: #454;
 }
@@ -23,6 +23,7 @@ body {
             }
         }
     }
+
 
     /* Top Slide show */
     .mjumbotron {
@@ -96,7 +97,26 @@ body {
         }
     }/*.mjumbotron*/
 
+    .breadcrumb {
+        background-color: #fff !important;
+    }
+
+    .btn-black {
+        background: #000;
+        color: #fff;
+    }
+    .btn-black:hover {
+        color: #c1c1c1;
+    }
+    .breadcrumb > li + li:before {
+        content: '\f0a9';
+    font-family: 'FontAwesome';
 }
+
+
+    } // bootstrap override
+
+
 
 
 body {
@@ -512,5 +532,43 @@ body {
             border: 1px #000 solid;
         }
     }
+
+    //==============================
+    // Bootstrap & Laravel Override
+    //==============================
+
+    // register form
+    .form-control {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #000;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #888;
+        border-radius: 0px !important;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+    .form-control-no-border {
+        display: block;
+        width: 100%;
+        height: 34px;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555;
+        background-color: #fff;
+        background-image: none;
+        border: 0px solid #ccc;
+        border-radius: 4px;
+    }
+
 
 }

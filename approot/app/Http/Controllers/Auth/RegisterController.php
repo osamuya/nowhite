@@ -49,7 +49,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255|unique:nw_users',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -62,10 +62,35 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+//        /**
+//         * 入力データの準備
+//         *
+//         *
+//         */
+//        $data['uniqeid'] = "1";
+//        $data['count'] = 1;
+//        $data['active'] = 1;
+//        $data['role'] = 1;
+//        $data['delflag'] = 0;
+//        $data['uniqehash'] = "1";
+//        /**
+//         * フィールドの追加は、このreturnの部分とmodelにカラム追加します。
+//         *
+//         *
+//         *
+//        */
+//        return User::create([
+//            'name' => $data['name'],
+//            'password' => bcrypt($data['password']),
+//            'email' => $data['email'],
+//            'uniqeid' => $data['uniqeid'],
+//            'uniqehash' => $data['uniqehash'],
+////            'remember_token' => "",
+//            'description' => "",
+//            'status' => $data['count'],
+//            'active' => $data['active'],
+//            'role' => $data['role'],
+//            'delflag' => $data['delflag'],
+//        ]);
     }
 }

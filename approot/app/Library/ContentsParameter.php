@@ -14,7 +14,8 @@ class ContentsParameter
         return 'ContentsParameter class. hello()!';
     }
 
-    public static function globalMenu() {
+    public static function globalMenu()
+    {
 
         return array(
             "appTitle" => "nowhote",
@@ -22,7 +23,7 @@ class ContentsParameter
             "menu" => array(
                 0 => array(
                     "text"=>"Home",
-                    "path"=>"/",
+                    "path"=>"#",
                     "icon" => "/assets/img/ug-home.png",
                     "target" => "_self",
                     "childMenu" => array(
@@ -36,17 +37,46 @@ class ContentsParameter
                             "path" => "/note/",
                             "target" => "_self",
                         ),
-
                     ),
                 ),
                 1 => array(
                     "text"=>"Login",
-                    "path"=>"/login",
+                    "path"=>"#",
                     "icon" => "/assets/img/ug-login.png",
                     "target" => "_self",
+                    "childMenu" => array(
+                        0 => array(
+                            "text" => "Sign up",
+                            "path" => "/register",
+                            "target" => "_self",
+                        ),
+                        1 => array(
+                            "text" => "Login",
+                            "path" => "/login",
+                            "target" => "_self",
+                        ),
+                    ),
                 ),
             ),//menu
+        );
+    }
 
+    public static function userStatus()
+    {
+        return $datauserStatus = array(
+            'role' => array(
+                0 => 'noSelect',
+                1 => 'member',
+                2 => 'admin',
+                99 => 'root',
+            ),
+            'status' => array(
+                0 => 'nothing',
+                1 => 'temporaryReception',
+                2 => 'active',
+                3 => 'temporaryStop',
+                4 => 'withdrawal',
+            ),
         );
     }
 }
