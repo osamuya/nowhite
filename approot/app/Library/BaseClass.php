@@ -10,13 +10,13 @@ use Monolog\Handler\StreamHandler;
 
 class BaseClass
 {
-	// property
-	protected $custom_log;
-	
-	
-	
-	
-	
+    // property
+    protected $custom_log;
+
+
+
+
+
     public static function hello() {
         return 'BaseClass test hello()!';
     }
@@ -26,31 +26,31 @@ class BaseClass
     | Method correctSerialize & correctUnserialize
     |--------------------------------------------------------------------------
     | As serialize () and unserialize () may not serialize properly,
-	| I try to serialize nearly almost correctly with base64 in between.
-	| example: cc0f609b88b6d12f2d52d6a7873a5611228e610e
+    | I try to serialize nearly almost correctly with base64 in between.
+    | example: cc0f609b88b6d12f2d52d6a7873a5611228e610e
     | * @access public
     | * @param $array
     | * @return $array
     */
-//	public static function correctSerialize($array)
-//	{
-//		$data = serialize($array);
-//		return $data;
-//	}
-//	public static function correctUnserialize($array)
-//	{
-//		$data = base64_decode($array);
-//		$array = unserialize(html_entity_decode($data));
-//		return $array;
-//	}
-	
-	
+//    public static function correctSerialize($array)
+//    {
+//        $data = serialize($array);
+//        return $data;
+//    }
+//    public static function correctUnserialize($array)
+//    {
+//        $data = base64_decode($array);
+//        $array = unserialize(html_entity_decode($data));
+//        return $array;
+//    }
+
+
     /*
     |--------------------------------------------------------------------------
     | Method makeAccessHash
     |--------------------------------------------------------------------------
     | make normal hash for anyway to use without password hash.
-	| example: cc0f609b88b6d12f2d52d6a7873a5611228e610e
+    | example: cc0f609b88b6d12f2d52d6a7873a5611228e610e
     | * @access public
     | * @param nothing
     | * @return $string
@@ -80,14 +80,14 @@ class BaseClass
     | * @access public
     | * @param $strings, $strings
     | * @return boolen
-	*/
-	public static function verifyEncrypt($password, $hash) {
-		if (password_verify($password, $hash)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+    */
+    public static function verifyEncrypt($password, $hash) {
+        if (password_verify($password, $hash)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     /*
     |--------------------------------------------------------------------------
@@ -130,22 +130,35 @@ class BaseClass
         $ui2 = substr($uniqeid_tmp,5,4);
         $ui3 = substr($uniqeid_tmp,9,4);
         $uniqeid = $oiprefix."-".$uiprefix."-".$ui1."-".$ui2."-".$ui3;
-		
+
         return $uniqeid;
     }
-	
-	public static function boundLettered($strings) {
-		
-//		echo $strings;
-		$count = mb_strlen($strings);
-		$boundLettered = "";
-		for($i=0; $i<$count; $i++) {
-			$boundLettered .= "●";
-		}
-		return $boundLettered;
-	}
-	
-	
+
+    /* パスワードの伏せ字を作成
+     *
+     * $strings @para 生のパスワード
+     * $fchara @para 伏せ字にしない文字数 (Offset)
+     *
+     */
+    public static function boundLettered($strings, $fchara=0) {
+
+        $displayChara = substr($strings, 0,$fchara);
+
+        $count = mb_strlen($strings);
+        $count = $count - $fchara;
+        $boundLettered = "";
+        for($i=0; $i<$count; $i++) {
+            $boundLettered .= "●";
+        }
+        if ($fchara > 0) {
+            $returnBoundLettered = $displayChara.$boundLettered;
+        } else if ($fchara == 0) {
+            $returnBoundLettered = $boundLettered;
+        }
+        return $returnBoundLettered;
+    }
+
+
     /*
     |--------------------------------------------------------------------------
     | Method getGlobalip
@@ -154,23 +167,10 @@ class BaseClass
     | * @return Global IP Address
     |
     */
-	public static function getGlobalip() {
-		
-		return \Request::ip();
-	}
-	
-    /*
-    |--------------------------------------------------------------------------
-    | Method appMonolog
-    |--------------------------------------------------------------------------
-	*/
-//	public static function appMonolog(){
-//		var_dump(base_path());
-//		$custom_log = new Logger('test');
-//		$custom_log->pushHandler(new StreamHandler(base_path()."/storage/logs/appCustom.log", Logger::INFO));
-//		
-//		return "hello!";
-//	}
+    public static function getGlobalip() {
+
+        return \Request::ip();
+    }
 
 
 

@@ -15,6 +15,8 @@
 <title>nowhite</title>
 <meta name="description" content="" />
 <meta name="keywords" content="" />
+<!-- CSRF Token -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!--og-->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://nowhite.site" />

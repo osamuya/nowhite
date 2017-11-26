@@ -1,23 +1,46 @@
-@extends('layouts.app')
+@extends('layouts.applayout')
+@section('title', 'nowhite top')
+
+@section('content')
 
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+        <ol class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+    </div>
+</div>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+    {{ csrf_field() }}
+</form>
 
-                    You are logged in!
-                </div>
+<div class="container">
+    <div class="row">
+        {{-- Left Column --}}
+        <div class="col-sm-6 col-xm-6">
+
+            <h2 class="h2 mb60">Dashboard</h2>
+
+            <a href="/logout" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                Logout
+            </a>
+
+            <div class="panel-body">
+
+
+                You are logged in!
             </div>
         </div>
+        {{-- Left Column End --}}
+
+        {{-- Right Column --}}
+        <div class="col-sm-6 col-xm-6 ">
+            foobar
+        </div>
+        {{-- Right Column End --}}
     </div>
 </div>
 @endsection

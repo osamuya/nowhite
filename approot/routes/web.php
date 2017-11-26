@@ -35,3 +35,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 /* /register */
 Route::match(['get', 'post'],'/regist_confirm', 'Login\SignupController@registConfirm');
 Route::post('/store', 'Login\SignupController@store');
+Route::get('/mail_authenticate_user/{accesshash}', 'Login\SignupController@mailAuthenticate');

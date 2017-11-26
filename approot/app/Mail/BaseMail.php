@@ -16,9 +16,10 @@ class BaseMail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($options, $data)
     {
-        //
+        $this->options = $options;
+        $this->data = $data;
     }
 
     /**
@@ -28,6 +29,10 @@ class BaseMail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->from($this->options['from'], $this->options['from_jp'])
+            ->subject($this->options['subject'])
+            ->bcc($this->options['bcc'])
+            ->with($this->data)
+            ->view($this->options['template']);
     }
 }
