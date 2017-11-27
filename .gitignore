@@ -15,6 +15,9 @@ approot/storage/framework/views/*
 approot/storage/debugbar/*
 approot/public/.htaccess
 
+# scss
+prepros-6.config
+
 # wordpress
 approot/public/note/wp-config.php
 approot/public/note/wp-content/uploads/*

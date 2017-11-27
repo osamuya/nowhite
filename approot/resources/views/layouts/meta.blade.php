@@ -15,6 +15,8 @@
 <title>nowhite</title>
 <meta name="description" content="" />
 <meta name="keywords" content="" />
+<!-- CSRF Token -->
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!--og-->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://nowhite.site" />
@@ -35,7 +37,7 @@
 <link rel="stylesheet" type="text/css" href="/assets/css/index.css" media="all">
 <!--js-->
 <script type="text/javascript" src="/assets/js/popper.min.js"></script>
-<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script>
 
 <!--[if lt IE 10]>
 <script type="text/javascript" src="assets/js/html5shiv.min.js"></script>

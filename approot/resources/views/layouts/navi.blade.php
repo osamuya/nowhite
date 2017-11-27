@@ -85,12 +85,15 @@
                     <li class="">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         <img src="/assets/img/ug-note.png" class="navbar-mc200-icon">
-                        usage
+                        member
                         <b class="caret"></b>
                     </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">ご利用方法</a></li>
-                            <li><a href="#">注意事項</a></li>
+                            <li><a href="/login">ログイン</a></li>
+                            <li><a href="/register">サインアップ</a></li>
+                            <li><a href="/logout" onclick="event.preventDefault();document.getElementById('logout-form').submit();">ログアウト</a></li>
+                            <li><a href="/home">ダッシュボード</a></li>
+                            <li><a href="/usage">このサイトの使い方</a></li>
                             <li><a href="#">免責</a></li>
                             <li><a href="/contact">お問い合わせ</a></li>
                         </ul>

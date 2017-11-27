@@ -63,6 +63,21 @@ class ContentsParameter
 
     public static function userStatus()
     {
+        /*
+
+        退会(withdrawal)
+            'role' => 1
+            'status' => 4
+            'delflag' => 1
+            'email' => 'withdrawal::sample@example.com'
+
+        メンバー(login)
+            'status' => 2
+            'delflag' => 0
+            'role' => 1
+            'email' => 'sample@example.com'
+        */
+
         return $datauserStatus = array(
             'role' => array(
                 0 => 'noSelect',

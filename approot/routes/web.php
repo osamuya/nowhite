@@ -11,10 +11,8 @@
 |
 */
 
+/* Top */
 Route::match(['get', 'post'], '/', 'TopController@index');
-
-
-
 
 // local only for testing or view
 if (env("APP_ENV")=="local" || env("APP_ENV")=="develop") {
@@ -35,3 +33,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 /* /register */
 Route::match(['get', 'post'],'/regist_confirm', 'Login\SignupController@registConfirm');
 Route::post('/store', 'Login\SignupController@store');
+Route::get('/mail_authenticate_user/{accesshash}', 'Login\SignupController@mailAuthenticate');
+
+/* members page /home */
+Route::get('/home/unsubscribe_on', 'HomeController@unsubscribe');
+Route::post('/home/unsubscribed', 'HomeController@unsubscribed');
+
+
+
+
+
