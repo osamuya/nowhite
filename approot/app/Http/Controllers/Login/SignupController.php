@@ -137,7 +137,7 @@ class SignupController extends Controller
         /* send mail */
         $mailTo = $data['email'];
         $options = [
-            'from' => 'from@example.com',
+            'from' => env("MAIL_FROM_ADDRESS"),
             'from_jp' => '仮登録完了のお知らせです',        //mailの内部のタイトル
             'to' => $mailTo,
             'subject' => '仮登録完了のお知らせ',    //mailの外側のタイトル

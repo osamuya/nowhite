@@ -23,6 +23,9 @@ approot/public/note/wp-config.php
 approot/public/note/wp-content/uploads/*
 approot/public/note/.htaccess
 
+# contents transaction data
+approot/public/assets/img/slide/*
+
 # me
 .para/*
 .doc/*
