@@ -104,6 +104,9 @@ class SignupController extends Controller
         /* Date time */
         $dt = Carbon::now();
         $registedDate =  $dt->format('Y年m月d日 h:i.s');
+        echo date("Y-m-d H-i-s");
+        var_dump($registedDate);
+        exit;
 
         /* Make access URL */
         $makeURL = env("APP_URL")."mail_authenticate_user/".$uniqehash;
@@ -136,15 +139,16 @@ class SignupController extends Controller
         $mailTo = $data['email'];
         $options = [
             'from' => 'from@example.com',
-            'from_jp' => '登録完了のお知らせです',        //mailの内部のタイトル
+            'from_jp' => '仮登録完了のお知らせです',        //mailの内部のタイトル
             'to' => $mailTo,
-            'subject' => '登録完了のお知らせ',    //mailの外側のタイトル
+            'subject' => '仮登録完了のお知らせ',    //mailの外側のタイトル
             'template' => 'mails.tmpregist',
             "bcc" => "oosamuuy@gmail.com",
         ];
 
         // mail template value
         $sndData = [
+            "name" => $data['name'],
             "email" => $data['email'],
             "password" => $boundLetteredPassword,
             "datetime" => $registedDate,
