@@ -103,14 +103,13 @@ class SignupController extends Controller
 
         /* Date time */
         $dt = Carbon::now();
-        $registedDate =  $dt->format('Y年m月d日 h:i.s');
-        echo date("Y-m-d H-i-s");
-        var_dump($registedDate);
-        exit;
+        $registedDate =  $dt->format('Y年m月d日 h:i:s');
 
         /* Make access URL */
         $makeURL = env("APP_URL")."mail_authenticate_user/".$uniqehash;
 
+        /* Get global IP address */
+        $gip = BaseClass::getGlobalip();
 
         /* Regist data
          *
@@ -132,7 +131,7 @@ class SignupController extends Controller
 
         /* save data */
         $this->create($data);
-        $logLine = "[New user registed] ".$request->input('name')." ".$request->input('email');
+        $logLine = "[New user registed] ".$request->input('name')." ".$request->input('email')." ".$gip;
         $this->custom_log->addInfo($logLine);
 
         /* send mail */
@@ -155,11 +154,11 @@ class SignupController extends Controller
             "accessURL" => $makeURL,
         ];
         Mail::to($mailTo)->send(new BaseMail($options, $sndData));
-        $logLine = "[Send to mail new registed user] ".$request->input('name')." ".$request->input('email');
+        $logLine = "[Send to mail new registed user] ".$request->input('name')." ".$request->input('email')." ".$gip;
         $this->custom_log->addInfo($logLine);
 
         /* save log */
-        $logLine = "[Complete new regist work flows] ".$request->input('name')." ".$request->input('email')." ".$registedDate;
+        $logLine = "[Complete new tmp regist work flows] ".$request->input('name')." ".$request->input('email')." ".$registedDate." ".$gip;
         $this->custom_log->addInfo($logLine);
 
         /* session reset */
@@ -167,9 +166,6 @@ class SignupController extends Controller
 
         /* end display */
         return view("auth.register_stored");
-
-
-
     }
 
     protected function create(array $data)
@@ -191,11 +187,41 @@ class SignupController extends Controller
 
     public function mailAuthenticate($accesshash) {
 
+        // 現在時間から有効期限を算出
+        // 仮登録から24時間(1日間)有効
+        $dt = Carbon::now();
+        $expirationTime = $dt->subDay(1);
+
+        $userID = User::where('delflag', 0)
+            ->where('status', 1)
+            ->where('uniqehash', $accesshash)
+            ->where('created_at','>',$expirationTime)
+            ->value("id");
+
+        if (!empty($userID)) {
+//            var_dump($userID);
+
+            /* Get global IP address */
+            $gip = BaseClass::getGlobalip();
+
+            /* Update status */
+            User::where('id', $userID)
+                ->update([
+                    'status' => 2,
+                ]);
+            $logLine = "[Complete new real regist work flows] ".$accesshash." ".$dt." ".$gip;
+            $this->custom_log->addInfo($logLine);
+
+            return view("auth.register_end");
+        }
+        /*  */
+        else
+        {
+//            abort(403);
+            abort(500);
+        }
 
 
-
-
-        return "mailAuthenticate";
     }
 
 }

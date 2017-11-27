@@ -37,7 +37,7 @@
 <link rel="stylesheet" type="text/css" href="/assets/css/index.css" media="all">
 <!--js-->
 <script type="text/javascript" src="/assets/js/popper.min.js"></script>
-<script type="text/javascript" src="assets/js/main.js"></script>
+<script type="text/javascript" src="/assets/js/main.js"></script>
 
 <!--[if lt IE 10]>
 <script type="text/javascript" src="assets/js/html5shiv.min.js"></script>

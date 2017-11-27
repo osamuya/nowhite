@@ -1,5 +1,5 @@
 @extends('layouts.applayout')
-@section('title', 'nowhite top')
+@section('title', '仮登録完了')
 
 @section('content')
 <div class="container">
