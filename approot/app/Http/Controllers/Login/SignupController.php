@@ -217,8 +217,9 @@ class SignupController extends Controller
         /*  */
         else
         {
-//            abort(403);
-            abort(500);
+            $logLine = "[Error] Either the user has already been registered or registration of mail authentication failed. ".$accesshash." ".$dt;
+            $this->custom_log->addInfo($logLine);
+            abort(403);
         }
 
 

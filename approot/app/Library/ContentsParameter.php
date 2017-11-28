@@ -28,13 +28,18 @@ class ContentsParameter
                     "target" => "_self",
                     "childMenu" => array(
                         0 => array(
-                            "text" => "nowhite",
+                            "text" => "nowhite home",
                             "path" => "/",
                             "target" => "_self",
                         ),
                         1 => array(
                             "text" => "nowhite note top",
                             "path" => "/note/",
+                            "target" => "_self",
+                        ),
+                        2 => array(
+                            "text" => "bookmark top",
+                            "path" => "/bookmark",
                             "target" => "_self",
                         ),
                     ),

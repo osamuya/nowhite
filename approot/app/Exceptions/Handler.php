@@ -5,6 +5,14 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
+/* App parameter */
+use App\Library\ContentsParameter;
+use App\Library\BaseClass;
+
+/* For custom monolog to the app */
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
 class Handler extends ExceptionHandler
 {
     /**
@@ -15,6 +23,16 @@ class Handler extends ExceptionHandler
     protected $dontReport = [
         //
     ];
+
+//    public $custom_log;
+
+//    public function __construct()
+//    {
+//
+//        $this->custom_log = new Logger('Exception');
+//        $this->custom_log->pushHandler(new StreamHandler(env("LOGIN_LOG"), Logger::INFO));
+//
+//    }
 
     /**
      * A list of the inputs that are never flashed for validation exceptions.
@@ -48,6 +66,9 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+//        $logLine = "[Error]";
+//        $this->custom_log->addInfo($logLine);
+
         return parent::render($request, $exception);
     }
 }

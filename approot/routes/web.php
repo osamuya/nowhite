@@ -39,7 +39,7 @@ Route::get('/mail_authenticate_user/{accesshash}', 'Login\SignupController@mailA
 Route::get('/home/unsubscribe_on', 'HomeController@unsubscribe');
 Route::post('/home/unsubscribed', 'HomeController@unsubscribed');
 
-
-
+/* Bookmark & Blog registration*/
+Route::get('/bookmark', 'BookmarkController@index');
 
 
