@@ -72,11 +72,29 @@ $h = mt_rand(100,300);
 $imgn = mt_rand(1,20);
 $heredocs = <<< EOM
     <div class="bookmark-panel">
-    <a href="">
-        <img src="/assets/img/dummy/bookmark/{$imgn}.jpg" width="100%">
-    </a>
-    <h4>Bookmark Title</h4>
-        <div class="bookmark-header"></div>
+    <div class="bookmark-display">
+        <div class="bookmark-imgblock">
+            <a href="">
+                <img src="/assets/img/dummy/bookmark/{$imgn}.jpg">
+            </a>
+        </div>
+        <div class="bookmark-metablock">
+            <div class="bcount">
+                <span class="" id="bmc">10000000</span>
+            </div>
+            <div id="sns_thumblr">
+                <img src="https://placehold.jp/100x20.png">
+            </div>
+            <div id="sns_twitter">
+                <img src="https://placehold.jp/100x20.png">
+            </div>
+
+        </div>
+    </div>
+
+        <div class="bookmark-header">
+        <h4>やたらと長いタイトルだったらどうすんべ</h4>
+        </div>
         <div class="bookmark-content">
             <p>去年くらいまでは、こういったレスポンシブ対応のMasonryレイアウトはJavaScriptで実装するのが主流でした。jQueryのプラグインも数多くリリースされています。そんなレスポンシブ対応のMasonryレイアウトをスクリプト無し、CSSで簡単に実装できるdrivewayを紹介します。CSSアニメーションを使ったインタラクションにも注目です！</p>
         </div>

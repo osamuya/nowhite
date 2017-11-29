@@ -20,14 +20,16 @@
 <div class="container">
     <div class="row">
         {{-- Left Column --}}
-        <div class="col-sm-6 col-xm-6">
+        <div class="col-sm-3 col-xm-3">
 
             <h2 class="h2 mb60">Dashboard</h2>
 
             <ul>
                 <li><a href="/logout" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a></li>
-                <li><a href="/home/unsubscribe_on">退会</a></li>
+                <li><a href="">Bookmark登録</a></li>
+                <li><a href="">Bookmark登録</a></li>
                 <li><a href="/home/update">登録情報の変更</a></li>
+                <li><a href="/home/unsubscribe_on">退会</a></li>
             </ul>
 
 
@@ -40,7 +42,7 @@
         {{-- Left Column End --}}
 
         {{-- Right Column --}}
-        <div class="col-sm-6 col-xm-6 ">
+        <div class="col-sm-9 col-xm-9 ">
             foobar
         </div>
         {{-- Right Column End --}}

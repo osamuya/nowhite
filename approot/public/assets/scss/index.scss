@@ -527,9 +527,45 @@ body {
     }
 
 
-       .dw {
+    .dw {
         .dw-panel {
             border: 1px #000 solid;
+        }
+
+        /* bookmark */
+        .bookmark-panel {
+            .bookmark-imgblock {
+                img {
+                    float: left;
+                    width: 66%;
+                }
+            }
+            .bookmark-metablock {
+                padding: 15px;
+                .bcount {
+
+                    span {
+                        font-size: 20px;
+                    }
+                }
+                float: right;
+                width: 34%;
+            }
+            .bookmark-header {
+                clear: both;
+                padding: 12px 5px;
+                h4 {
+                    margin: 3px 0;
+                    font-size: 20px;
+                }
+            }
+            .bookmark-content {
+                padding: 15px;
+            }
+
+            .bookmark-footer {
+                margin-bottom: 15px;
+            }
         }
     }
 
@@ -577,4 +613,6 @@ body {
             margin-left: 20px;
         }
     }
+
+
 }

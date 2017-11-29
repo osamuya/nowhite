@@ -704,8 +704,29 @@ body {
     border: none; }
   body .indexBlock .item-date {
     display: inline; }
-  body .dw .dw-panel {
-    border: 1px #000 solid; }
+  body .dw {
+    /* bookmark */ }
+    body .dw .dw-panel {
+      border: 1px #000 solid; }
+    body .dw .bookmark-panel .bookmark-imgblock img {
+      float: left;
+      width: 66%; }
+    body .dw .bookmark-panel .bookmark-metablock {
+      padding: 15px;
+      float: right;
+      width: 34%; }
+      body .dw .bookmark-panel .bookmark-metablock .bcount span {
+        font-size: 20px; }
+    body .dw .bookmark-panel .bookmark-header {
+      clear: both;
+      padding: 12px 5px; }
+      body .dw .bookmark-panel .bookmark-header h4 {
+        margin: 3px 0;
+        font-size: 20px; }
+    body .dw .bookmark-panel .bookmark-content {
+      padding: 15px; }
+    body .dw .bookmark-panel .bookmark-footer {
+      margin-bottom: 15px; }
   body .form-control {
     display: block;
     width: 100%;
