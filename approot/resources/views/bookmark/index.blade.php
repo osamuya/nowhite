@@ -1,104 +1,49 @@
 @extends('layouts.applayout')
-@section('title', 'nowhite top') @section('content')
+@section('title', 'nowhite bookmark top') @section('content')
 
-<div class="jumbotron mjumbotron">
-
-    <div id="carousel-mainContents" class="slide carousel" data-ride="carousel" data-interval="5000">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-mainContents" data-slide-to="0" class=""></li>
-            <li data-target="#carousel-mainContents" data-slide-to="1" class=""></li>
-            <li data-target="#carousel-mainContents" data-slide-to="2" class="active"></li>
-            <li data-target="#carousel-mainContents" data-slide-to="3"></li>
-            <li data-target="#carousel-mainContents" data-slide-to="4"></li>
-            <li data-target="#carousel-mainContents" data-slide-to="5"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item">
-                <img src="/assets/img/slide/001_1600.jpg" alt="hogehoge">
-                <div class="carousel-text">
-                    <h3>夏</h3>
-                    <p>太陽が燦々に降り注ぐ暑い季節</p>
-                    <button type="button" class="btn btn-default">春ページ詳細</button>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/assets/img/slide/002_1600.jpg" alt="hugahuga">
-                <div class="carousel-text">
-                    <h3>hugahuga</h3>
-                    <p>hugahuga</p>
-                </div>
-            </div>
-            <div class="item active">
-                <img src="/assets/img/slide/003_1600.jpg" alt="hugahuga">
-                <div class="carousel-text">
-                    <h3>hugahuga</h3>
-                    <p>hugahuga</p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/assets/img/slide/004_1600.jpg" alt="hugahuga">
-                <div class="carousel-text">
-                    <h3>hugahuga</h3>
-                    <p>hugahuga</p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/assets/img/slide/005_1600.jpg" alt="hugahuga">
-                <div class="carousel-text">
-                    <h3>hugahuga</h3>
-                    <p>hugahuga</p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/assets/img/slide/006_1600.jpg" alt="hugahuga">
-                <div class="carousel-text">
-                    <h3>hugahuga</h3>
-                    <p>hugahuga</p>
-                </div>
-            </div>
-        </div><!--.carousel-inner-->
-    </div><!--.slide-->
-</div><!--.jumbotron-->
+<script>
+jQuery(function($){
+  $('#container').masonry({
+    itemSelector: '.item',
+    columnWidth: 200,
+    isFitWidth: true  //親要素の幅に合わせてカラム数を自動調整
+  });
+});
+</script>
 
 
 
-<div class="dw">
+<div class="container">
+<div id="container" class="block-center">
 <?php
     for($i=0;$i<100;$i++){
 $h = mt_rand(100,300);
 $imgn = mt_rand(1,20);
 $heredocs = <<< EOM
-    <div class="bookmark-panel">
-    <div class="bookmark-display">
-        <div class="bookmark-imgblock">
-            <a href="">
-                <img src="/assets/img/dummy/bookmark/{$imgn}.jpg">
-            </a>
-        </div>
-        <div class="bookmark-metablock">
-            <div class="bcount">
-                <span class="" id="bmc">10000000</span>
-            </div>
-            <div id="sns_thumblr">
-                <img src="https://placehold.jp/100x20.png">
-            </div>
-            <div id="sns_twitter">
-                <img src="https://placehold.jp/100x20.png">
-            </div>
+    <div class="item" style="width:190px;">
+    <img src="/assets/img/dummy/bookmark/{$imgn}.jpg" style="width: 190px">
+      <p class="bookmark-title">長いタイトルは結構きつい</p>
+      <p class="bookmark-description">
+      Masonry は jQuery は必須ではないがあった方が便利なので、jQuery とダウンロードした「masonry.pkgd.min.js」の読み込みを body 閉じタグの直前や head 内等に記述。ファイル（masonry.pkgd.min.js）へのパスは適宜環境に合わせて記述。（jQuery を読み込んでおけば jQuery プラグインとして機能する。）
+      </p>
 
-        </div>
-    </div>
 
-        <div class="bookmark-header">
-        <h4>やたらと長いタイトルだったらどうすんべ</h4>
-        </div>
-        <div class="bookmark-content">
-            <p>去年くらいまでは、こういったレスポンシブ対応のMasonryレイアウトはJavaScriptで実装するのが主流でした。jQueryのプラグインも数多くリリースされています。そんなレスポンシブ対応のMasonryレイアウトをスクリプト無し、CSSで簡単に実装できるdrivewayを紹介します。CSSアニメーションを使ったインタラクションにも注目です！</p>
-        </div>
-        <div class="bookmark-footer">2017-11-29</div>
+
+      <a class="twitter-share-button"
+  href="https://twitter.com/share"
+  data-size="small"
+  data-url="https://dev.twitter.com/web/tweet-button"
+  data-via="twitterdev"
+  data-related="twitterapi,twitter"
+  data-hashtags="example,demo"
+  data-text="custom share text"
+  data-size="large"
+  data-lang="ja"
+  data-dnt="true">Tweet</a>
+
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">シェア</a></div>
     </div>
 EOM;
 echo $heredocs;
@@ -106,6 +51,7 @@ echo $heredocs;
 
 ?>
 </div>
+    </div>
 
 
 

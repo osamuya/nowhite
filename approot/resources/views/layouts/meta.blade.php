@@ -31,11 +31,12 @@
 <script src="/assets/js/jquery-1.11.2.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 <link type="text/css" href="/assets/css/bootstrap.min.css" rel="stylesheet">
+
 <!--css-->
-<link rel="stylesheet" type="text/css" href="/assets/css/driveway.min.css" media="all">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="/assets/css/index.css" media="all">
 <!--js-->
+<script type="text/javascript" src="/assets/js/masonry.min.js"></script>
 <script type="text/javascript" src="/assets/js/popper.min.js"></script>
 <script type="text/javascript" src="/assets/js/main.js"></script>
 

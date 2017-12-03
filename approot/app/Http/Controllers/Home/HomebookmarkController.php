@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -28,22 +28,27 @@ use App\Mail\BaseMail;
 // Datetime package "Carbon" for laravel
 use Carbon\Carbon;
 
-class BookmarkController extends Controller
+class HomebookmarkController extends Controller
 {
-
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
     public function __construct()
     {
-
-        $this->custom_log = new Logger('REGIST');
+        $this->middleware('auth');
+        $this->custom_log = new Logger('WITHDRAWWAL');
         $this->custom_log->pushHandler(new StreamHandler(env("LOGIN_LOG"), Logger::INFO));
-
     }
 
-    public function index(Request $request)
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
-
-
-
-        return view("bookmark.index");
+        return view('home.bookmark_create');
     }
 }

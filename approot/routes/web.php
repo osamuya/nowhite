@@ -41,5 +41,5 @@ Route::post('/home/unsubscribed', 'HomeController@unsubscribed');
 
 /* Bookmark & Blog registration*/
 Route::get('/bookmark', 'BookmarkController@index');
-
+Route::match(['get', 'post'], '/home/bookmark/create', 'Home\HomebookmarkController@create');
 

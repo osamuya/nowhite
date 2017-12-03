@@ -1,3 +1,28 @@
+{{-- @Under login --}}
+@if (!Auth::guest())
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+  <div class="navbar-header">
+
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#patern03">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+
+  <div id="patern03" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="/home">Dash board</a></li>
+      <li><a href="">Link2</a></li>
+      <li><a href="/logout" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a></li>
+    </ul>
+  </div>
+    </div>
+</nav>
+@endif
+{{-- @Under login end --}}
+
 <nav class="navbar-default navbar navbar-static-top navbar-mc200">
     <div class="container">
 
@@ -103,3 +128,8 @@
     </div>
     <!--.container-->
 </nav>
+
+
+
+
+

@@ -527,47 +527,7 @@ body {
     }
 
 
-    .dw {
-        .dw-panel {
-            border: 1px #000 solid;
-        }
 
-        /* bookmark */
-        .bookmark-panel {
-            .bookmark-imgblock {
-                img {
-                    float: left;
-                    width: 66%;
-                }
-            }
-            .bookmark-metablock {
-                padding: 15px;
-                .bcount {
-
-                    span {
-                        font-size: 20px;
-                    }
-                }
-                float: right;
-                width: 34%;
-            }
-            .bookmark-header {
-                clear: both;
-                padding: 12px 5px;
-                h4 {
-                    margin: 3px 0;
-                    font-size: 20px;
-                }
-            }
-            .bookmark-content {
-                padding: 15px;
-            }
-
-            .bookmark-footer {
-                margin-bottom: 15px;
-            }
-        }
-    }
 
     //==============================
     // Bootstrap & Laravel Override
@@ -606,6 +566,30 @@ body {
         border-radius: 4px;
     }
 
+    /* Masonary */
+    #container {
+//        background-color: #000;
+        margin: 0 auto;
+        .item {
+            .bookmark-title {
+                padding: 7px 7px;
+                background: #fff;
+                color: #000;
+                border-bottom: 3px solid #000;
+                font-weight: bold;
+                line-height: 18px;
+            }
+            .bookmark-description {
+                padding: 10px 7px;
+                line-height: 20px;
+                #twitter-widget-0 {
+                    -webkit-filter: grayscale(30%) !important;
+                    filter: grayscale(106%) !important;
+                }
+            }
+        }
+    }
+
     /* Errors */
     .message {
 
@@ -614,5 +598,9 @@ body {
         }
     }
 
-
+    .navbar {
+        a:link, a:visited {
+            border-bottom: 0px;
+        }
+    }
 }
