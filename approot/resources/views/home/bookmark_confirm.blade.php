@@ -30,21 +30,14 @@
                     <label for="siteName" class="col-md-4 control-label">
                         サイトまたはブログ名</label>
                     <div class="col-md-6">
-                        <input id="siteName" type="text" class="form-control" name="siteName" value="{{old('siteName')}}" required="" autofocus="">
-                        <span class="help-block">
-                            <strong>{{ $errors->first('siteName') }}</strong>
-                        </span>
+                        <input id="siteName" type="text" class="readonly" name="siteName" value="{{$siteName}}" readonly="readonly">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="url" class="col-md-4 control-label">URL</label>
-
                     <div class="col-md-6">
-                        <input id="url" type="url" class="form-control" name="url" value="{{old('url')}}" required="">
-                        <span class="help-block">
-                            <strong>{{ $errors->first('url') }}</strong>
-                        </span>
+                        <input id="url" type="url" class="readonly" name="url" value="{{$url}}" readonly="readonly" >
                     </div>
                 </div>
 
@@ -54,28 +47,24 @@
                     </label>
 
                     <div class="col-md-6">
-                        <textarea id="description" type="description" class="form-control" name="description" >{{old('description')}}</textarea>
-                        <span class="help-block">
-                            <strong>{{ $errors->first('description') }}</strong>
-                        </span>
+                        <textarea id="description" type="description" class="readonly" name="description" readonly="readonly" >{{$description}}</textarea>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="rss" class="col-md-4 control-label">RSS</label>
-
                     <div class="col-md-6">
-                        <input id="rss" type="text" class="form-control" name="rss" value="{{old('rss')}}">
-                        <span class="help-block">
-                            <strong>{{ $errors->first('rss') }}</strong>
-                        </span>
+                        <input id="rss" type="rss" class="readonly" name="rss" value="{{$rss}}" readonly="readonly" >
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-4">
+                        <button type="button" onclick="history.back()" class="btn btn-default">
+                            もどる
+                        </button>
                         <button type="submit" class="btn btn-black">
-                            確認する
+                            登録
                         </button>
                     </div>
                 </div>

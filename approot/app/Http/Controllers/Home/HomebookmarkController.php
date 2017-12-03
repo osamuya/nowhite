@@ -51,4 +51,28 @@ class HomebookmarkController extends Controller
     {
         return view('home.bookmark_create');
     }
+    public function confirm(Request $request)
+    {
+//        var_dump($request->input('siteName'));
+//        var_dump($request->input('url'));
+//        var_dump($request->input('description'));
+//        var_dump($request->input('rss'));
+
+        $this->validate($request, [
+            'siteName' => 'required',
+            'url' => 'required|max:1000',
+            'description' => 'required|min:10|max:200',
+            'rss' => 'max:1000',
+        ]);
+
+        /* Original Validation */
+
+
+        return view('home.bookmark_confirm')->with([
+            "siteName" => $request->input('siteName'),
+            "url" => $request->input('url'),
+            "description" => $request->input('description'),
+            "rss" => $request->input('rss'),
+        ]);
+    }
 }
