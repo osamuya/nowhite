@@ -8,7 +8,7 @@
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="/">Home</a></li>
-            <li class="/home">Dashboard</li>
+            <li class="/home"><a href="">Dashboard</a></li>
             <li class="active">Bookmark登録</li>
         </ol>
     </div>

@@ -43,4 +43,5 @@ Route::post('/home/unsubscribed', 'HomeController@unsubscribed');
 Route::get('/bookmark', 'BookmarkController@index');
 Route::match(['get', 'post'], '/home/bookmark/create', 'Home\HomebookmarkController@create');
 Route::post('/home/bookmark/confirm', 'Home\HomebookmarkController@confirm');
+Route::post('/home/bookmark/store', 'Home\HomebookmarkController@store');
 

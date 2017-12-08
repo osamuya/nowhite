@@ -14,6 +14,9 @@ use App\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
+// model
+use App\NwUserBookmark;
+
 // Monolog
 use Illuminate\Support\Facades\Log;
 
@@ -60,9 +63,9 @@ class HomebookmarkController extends Controller
 
         $this->validate($request, [
             'siteName' => 'required',
-            'url' => 'required|max:1000',
+            'url' => 'required|max:1000|regex:/https?:\/\/[a-zA-Z0-9-_.~\/?:&=%+#]+/',
             'description' => 'required|min:10|max:200',
-            'rss' => 'max:1000',
+            'rss' => 'max:1000|regex:/https?:\/\/[a-zA-Z0-9-_.~\/?:&=%+#]+/',
         ]);
 
         /* Original Validation */
@@ -75,4 +78,58 @@ class HomebookmarkController extends Controller
             "rss" => $request->input('rss'),
         ]);
     }
+
+    public function store(Request $request)
+    {
+        var_dump($request->input('siteName'));
+        var_dump($request->input('url'));
+        var_dump($request->input('description'));
+        var_dump($request->input('rss'));
+
+        $this->validate($request, [
+            'siteName' => 'required',
+            'url' => 'required|max:1000|regex:/https?:\/\/[a-zA-Z0-9-_.~\/?:&=%+#]+/',
+            'description' => 'required|min:10|max:200',
+            'rss' => 'max:1000|regex:/https?:\/\/[a-zA-Z0-9-_.~\/?:&=%+#]+/',
+        ]);
+
+        /* Original Validation */
+
+        $nw_user_bookmarks = new NwUserBookmark();
+                $user = \Auth::user();
+            var_dump($user->id);
+
+        // insert
+        $nw_user_bookmarks->bmUsersId       = $user->id;
+        $nw_user_bookmarks->bmImage         = "";
+        $nw_user_bookmarks->bmImageThubnail = "";
+        $nw_user_bookmarks->bmTitle         = $request->input('siteName');
+        $nw_user_bookmarks->bmMeta          = "";
+        $nw_user_bookmarks->bmLink          = $request->input('url');
+        $nw_user_bookmarks->bmRss           = $request->input('rss');
+        $nw_user_bookmarks->bmDescription   = $request->input('description');
+        $nw_user_bookmarks->bmCount         = 1;
+        $nw_user_bookmarks->bmRelations     = "";
+        $nw_user_bookmarks->bmRecommend     = "";
+        $nw_user_bookmarks->bmRemark        = "";
+        $nw_user_bookmarks->bmStatus        = 1;
+        $nw_user_bookmarks->bmDelflag       = 0;
+//        $nw_user_bookmarks->created_at = "";
+//        $nw_user_bookmarks->updated_at = "";
+
+        // store
+        $re = $nw_user_bookmarks->save();
+
+
+
+        return view("home.bookmark_store");
+
+//        return view('home.bookmark_confirm')->with([
+//            "siteName" => $request->input('siteName'),
+//            "url" => $request->input('url'),
+//            "description" => $request->input('description'),
+//            "rss" => $request->input('rss'),
+//        ]);
+    }
+
 }

@@ -86,6 +86,7 @@ class HomeController extends Controller
         if ($request->has('email')) {
             /* Retrieve login user information */
             $user = \Auth::user();
+            var_dump($user);
             $dt = Carbon::now();
 
             if ($user->email == $request->input('email')) {

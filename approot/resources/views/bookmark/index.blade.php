@@ -3,15 +3,78 @@
 
 <script>
 jQuery(function($){
-  $('#container').masonry({
-    itemSelector: '.item',
-    columnWidth: 200,
-    isFitWidth: true  //親要素の幅に合わせてカラム数を自動調整
-  });
+    /**
+    For Responcive with Bootstrap3
+        -767
+    768 - 991
+    992 - 1119
+    1200 -
+    **/
+
+    /* on load */
+    var mswidth=200;
+    var egwidth = $(window).width();
+        if (egwidth <= 767) {
+            $("#container").css({'cssText':'width: 92%; !important;'});
+            $(".item").css({'cssText':'width: 100%; !important;'});
+            mswidth = Math.ceil(egwidth * 0.073);
+
+        }
+//    else if (egwidth >= 768 && egwidth <= 991) {
+//            $("#container").css({'cssText':'width: 100%; !important;'});
+//            $(".item").css({'cssText':'width: 190px; !important;'});
+//            $(".item").css({'cssText':'margin: 0 10px; !important;'});
+//            mswidth = 190;
+//        } else if (egwidth >= 992 && egwidth <= 1119) {
+//            $("#container").css({'cssText':'width: 100%; !important;'});
+//            $(".item").css({'cssText':'width: 190px; !important;'});
+//            $(".item").css({'cssText':'margin: 0 10px; !important;'});
+//            mswidth = 190;
+//        } else if (egwidth >= 1200) {
+//            $("#container").css({'cssText':'width: 100%; !important;'});
+//            $(".item").css({'cssText':'width: 190px; !important;'});
+//            $(".item").css({'cssText':'margin: 0 10px; !important;'});
+//            mswidth = 190;
+//        }
+    // Window width resize with pc
+    var timer = false;
+
+    /* real time */
+    $(window).resize(function() {
+
+        if (timer !== false) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(function() {
+        var egwidth = $(window).width();
+            if (egwidth <= 767) {
+                $("#container").css({'cssText':'width: 92%; !important;'});
+                $(".item").css({'cssText':'width: 100%; !important;'});
+                mswidth = Math.ceil(egwidth * 0.073);
+            }
+//            else if (egwidth >= 768 && egwidth <= 991) {
+//                mswidth = 190;
+//            } else if (egwidth >= 992 && egwidth <= 1119) {
+//                mswidth = 190;
+//            } else if (egwidth >= 1200) {
+//                mswidth = 190;
+//            }
+        }, 200);
+    });
+
+
+
+    $('#container').masonry({
+        itemSelector: '.item',
+        columnWidth: mswidth,
+        isFitWidth: true  //親要素の幅に合わせてカラム数を自動調整
+    });
+
+
+
+
 });
 </script>
-
-
 
 <div class="container">
 <div id="container" class="block-center">

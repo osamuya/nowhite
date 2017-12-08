@@ -24,7 +24,7 @@
         {{-- Right Column --}}
         <div class="col-sm-9 col-xm-9 ">
             <h4 class="h4 mb40">Bookmark登録</h4>
-            <form class="form-horizontal" method="POST" action="/home/bookmark/confirm" novalidate="novalidate">
+            <form class="form-horizontal" method="POST" action="/home/bookmark/store" novalidate="novalidate">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="siteName" class="col-md-4 control-label">
@@ -58,13 +58,13 @@
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group pt60">
                     <div class="col-md-6 col-md-offset-4">
                         <button type="button" onclick="history.back()" class="btn btn-default">
                             もどる
                         </button>
                         <button type="submit" class="btn btn-black">
-                            登録
+                            ブックマーク登録
                         </button>
                     </div>
                 </div>

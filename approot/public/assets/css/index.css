@@ -400,34 +400,36 @@ body {
         @media print, screen and (min-width: 768px) and (max-width: 991px) {
           body .mjumbotron .carousel .carousel-indicators {
             top: 15%; } }
-      body .mjumbotron .carousel .carousel-inner .item img {
-        width: 100%; }
-      body .mjumbotron .carousel .carousel-inner .item .carousel-text {
-        color: #fff;
-        position: absolute;
-        top: 50%;
-        left: 10%; }
-        body .mjumbotron .carousel .carousel-inner .item .carousel-text h3 {
-          font-size: 27px;
-          font-weight: normal;
-          margin-bottom: 14px;
-          letter-spacing: 2px; }
+      body .mjumbotron .carousel .carousel-inner .item {
+        margin: 5px; }
+        body .mjumbotron .carousel .carousel-inner .item img {
+          width: 100%; }
+        body .mjumbotron .carousel .carousel-inner .item .carousel-text {
+          color: #fff;
+          position: absolute;
+          top: 50%;
+          left: 10%; }
+          body .mjumbotron .carousel .carousel-inner .item .carousel-text h3 {
+            font-size: 27px;
+            font-weight: normal;
+            margin-bottom: 14px;
+            letter-spacing: 2px; }
+            @media print, screen and (max-width: 767px) {
+              body .mjumbotron .carousel .carousel-inner .item .carousel-text h3 {
+                font-size: 4vw;
+                margin-bottom: 2%; } }
+          body .mjumbotron .carousel .carousel-inner .item .carousel-text p {
+            font-size: 16px;
+            font-weight: normal;
+            letter-spacing: 3px; }
+            @media print, screen and (max-width: 767px) {
+              body .mjumbotron .carousel .carousel-inner .item .carousel-text p {
+                display: none; } }
           @media print, screen and (max-width: 767px) {
-            body .mjumbotron .carousel .carousel-inner .item .carousel-text h3 {
-              font-size: 4vw;
-              margin-bottom: 2%; } }
-        body .mjumbotron .carousel .carousel-inner .item .carousel-text p {
-          font-size: 16px;
-          font-weight: normal;
-          letter-spacing: 3px; }
-          @media print, screen and (max-width: 767px) {
-            body .mjumbotron .carousel .carousel-inner .item .carousel-text p {
-              display: none; } }
-        @media print, screen and (max-width: 767px) {
-          body .mjumbotron .carousel .carousel-inner .item .carousel-text button {
-            letter-spacing: 1px;
-            height: 23px;
-            padding: 0 10px; } }
+            body .mjumbotron .carousel .carousel-inner .item .carousel-text button {
+              letter-spacing: 1px;
+              height: 23px;
+              padding: 0 10px; } }
     body .mjumbotron .slider li img {
       width: 100%;
       margin-top: -48px; }
